@@ -19,5 +19,6 @@ i = 1
 for i in range(10): #Va del 0 al 10
     num_aleatorio = rn.randint(1, 1000)
     lista.append(num_aleatorio)
-print(lista)
+for x in lista:
+    print(x)
 
