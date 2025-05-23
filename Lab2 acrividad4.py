@@ -11,12 +11,14 @@ ALGORITMO:
 6. numero <-- solicitar al usuario
 7. if numero pertenece a lista then
     7.1 print(ganador!)
-    7.2 break
+    7.2 posicion <-- numero en que se encuentra en la lista
+    7.3 print <-- su numero se encontraba en la posicion: posicion + 1
+    7.4 break
 8. else
     8.1 print <-- "Intenta de nuevo"
     8.2 contador de intentos <-- aumenta en 1 su valor
-    8.3 print <-- se ha quedado sin intentos, los numeros correctos eran:
-    8.4 print <-- lista
+9. print <-- se ha quedado sin intentos, los numeros correctos eran:
+10. print <-- lista
 """
 #Importar librerias
 import random as rn
