@@ -12,7 +12,7 @@ for i in range del largo de semanas
 import conversion
 import zonas
 import semestres
-import listas
+import listas 
 meses, tiendas, importes, descuentos = listas.listas() 
 
 #Solicitar el tipo de cambio
