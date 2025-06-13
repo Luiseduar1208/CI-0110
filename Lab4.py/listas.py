@@ -14,7 +14,7 @@ while eof:
     descuentos <-- index3
 """
 def listas():
-    with open(r"C:\Users\luied\Documents\Ejercicio 16-1.txt") as archivo:
+    with open(r"c:\Users\c5f958\Documents\Ejercicio 16-1.txt") as archivo:
         archivo.readline()
 
         meses = []
