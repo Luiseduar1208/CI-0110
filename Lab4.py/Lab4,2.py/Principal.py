@@ -35,7 +35,6 @@ for i in range(len(lista_zonas)):
         suma_zona_norte += precios_finales[i]
 print <-- "Suma de valores de la Zona Norte:", suma_zona_norte
 """
-
 tipo_cambio = float(input("Ingrese el tipo de cambio: "))
 
 import Modulo as m
