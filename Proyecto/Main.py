@@ -5,8 +5,6 @@ lista3 = []
 lista4 = []
 lista5 = []
 lista6 = []
-lista_total = [lista1, lista2, lista3, lista4, lista5, lista6]
-
 #Solicitud de palabras al usuario
 cant_parrafos = 0
 print("Para buscar las palabras tenga en cuenta que el programa es sensible a mayúsculas y minúsculas.")
@@ -19,8 +17,12 @@ palabra5 = input("Ingrese la quinta palabra: ")
 palabra6 = input("Ingrese la sexta palabra: ")
 
 with open(r"C:\Users\luied\Documents\TextoCompleto.txt") as archivo: #Apertura del archivo
+
     for linea in archivo: #Recorrido del archivo parrafo por parrafo
-        palabras = linea.strip().split()
+
+        palabras = linea.strip().split() #Division de parrafos en lista de palabras
+        
+        # Conteo de palabras en cada parrafo y almacenamiento en listas
         cuantas1 = palabras.count(palabra1)
         lista1.append(cuantas1)
 
@@ -41,6 +43,7 @@ with open(r"C:\Users\luied\Documents\TextoCompleto.txt") as archivo: #Apertura d
 
         cant_parrafos += 1
 
+#Suma de las palabras encontradas en cada lista
 totalp1 = sum(lista1)
 totalp2 = sum(lista2)
 totalp3 = sum(lista3)
@@ -50,7 +53,6 @@ totalp6 = sum(lista6)
 
 totales = [totalp1, totalp2, totalp3, totalp4, totalp5, totalp6]
 
+#Ordenamiento de los totales y determinacion del mayor para utilizarlo en los graficos
 totales.sort(reverse=True)
 mayor = totales[0]
-
-print(cant_parrafos)
