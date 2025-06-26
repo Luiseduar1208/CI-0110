@@ -6,22 +6,24 @@ lista4 = []
 lista5 = []
 lista6 = []
 #Solicitud de palabras al usuario
+
+import string
+
 cant_parrafos = 0
-print("Para buscar las palabras tenga en cuenta que el programa es sensible a mayúsculas y minúsculas.")
-print()
-palabra1 = input("Ingrese la primera palabra: ")
-palabra2 = input("Ingrese la segunda palabra: ")
-palabra3 = input("Ingrese la tercera palabra: ")
-palabra4 = input("Ingrese la cuarta palabra: ")
-palabra5 = input("Ingrese la quinta palabra: ")
-palabra6 = input("Ingrese la sexta palabra: ")
+print("Para buscar las palabras tenga en cuenta que el programa es sensible a mayúsculas y minúsculas. \n")
+palabra1 = input("Ingrese la primera palabra: ").strip().strip(string.punctuation)
+palabra2 = input("Ingrese la segunda palabra: ").strip().strip(string.punctuation)
+palabra3 = input("Ingrese la tercera palabra: ").strip().strip(string.punctuation)
+palabra4 = input("Ingrese la cuarta palabra: ").strip().strip(string.punctuation)
+palabra5 = input("Ingrese la quinta palabra: ").strip().strip(string.punctuation)
+palabra6 = input("Ingrese la sexta palabra: ").strip().strip(string.punctuation)
 
 with open(r"C:\Users\luied\Documents\TextoCompleto.txt") as archivo: #Apertura del archivo
 
     for linea in archivo: #Recorrido del archivo parrafo por parrafo
 
         palabras = linea.strip().split() #Division de parrafos en lista de palabras
-        
+
         # Conteo de palabras en cada parrafo y almacenamiento en listas
         cuantas1 = palabras.count(palabra1)
         lista1.append(cuantas1)
@@ -53,6 +55,80 @@ totalp6 = sum(lista6)
 
 totales = [totalp1, totalp2, totalp3, totalp4, totalp5, totalp6]
 
+#Determinacion del mayor de cada lista
+mayor_lista1 = max(lista1)
+mayor_lista2 = max(lista2)
+mayor_lista3 = max(lista3)
+mayor_lista4 = max(lista4)
+mayor_lista5 = max(lista5)
+mayor_lista6 = max(lista6)
+
+menor_lista1 = min(lista1)
+menor_lista2 = min(lista2)
+menor_lista3 = min(lista3)
+menor_lista4 = min(lista4)
+menor_lista5 = min(lista5)
+menor_lista6 = min(lista6)
+
 #Ordenamiento de los totales y determinacion del mayor para utilizarlo en los graficos
 totales.sort(reverse=True)
 mayor = totales[0]
+
+decision_usuario = input("Si desea descargar los resultados en un archivo de texto indique S o s: \n").lower()
+
+from statistics import mean, median, mode
+
+if decision_usuario == 's':
+    with open(r"C:\Users\luied\Documents\Estadisticas.txt", "w") as resultados:
+        resultados.write(f"""ESTADISTICAS DE PALABRAS
+Palabra 1: {palabra1}
+Total de ocurrencias: {totalp1}
+MAXIMA cantidad de ocurrencias: {mayor_lista1}
+MININMA cantidad de ocurrencias: {menor_lista1}
+Media de ocurrencias: {mean(lista1)}
+Mediana de ocurrencias: {median(lista1)}
+ Modo de ocurrencias: {mode(lista1)}
+
+Palabra 2: {palabra2}
+Total de ocurrencias: {totalp2}
+MAXIMA cantidad de ocurrencias: {mayor_lista2}
+MININMA cantidad de ocurrencias: {menor_lista2}
+Media de ocurrencias: {mean(lista2)}
+Mediana de ocurrencias: {median(lista2)}
+Modo de ocurrencias: {mode(lista2)}
+
+Palabra 3: {palabra3}
+Total de ocurrencias: {totalp3}
+MAXIMA cantidad de ocurrencias: {mayor_lista3}
+MININMA cantidad de ocurrencias: {menor_lista3}
+Media de ocurrencias: {mean(lista3)}
+Mediana de ocurrencias: {median(lista3)}
+Modo de ocurrencias: {mode(lista3)}
+
+Palabra 4: {palabra4}
+Total de ocurrencias: {totalp4}
+MAXIMA cantidad de ocurrencias: {mayor_lista4}
+MININMA cantidad de ocurrencias: {menor_lista4}
+Media de ocurrencias: {mean(lista4)}
+Mediana de ocurrencias: {median(lista4)}
+Modo de ocurrencias: {mode(lista4)}
+
+Palabra 5: {palabra5}
+Total de ocurrencias: {totalp5}
+MAXIMA cantidad de ocurrencias: {mayor_lista5}
+MININMA cantidad de ocurrencias: {menor_lista5}
+Media de ocurrencias: {mean(lista5)}
+Mediana de ocurrencias: {median(lista5)}
+Modo de ocurrencias: {mode(lista5)}
+
+Palabra 6: {palabra6}
+Total de ocurrencias: {totalp6}
+MAXIMA cantidad de ocurrencias: {mayor_lista6}
+MININMA cantidad de ocurrencias: {menor_lista6}
+Media de ocurrencias: {mean(lista6)}
+Mediana de ocurrencias: {median(lista6)}
+Modo de ocurrencias: {mode(lista6)}
+""")
+    print("Los resultados fueron guardados exitosamente en 'Estadisticas.txt'.")
+else:
+    print("No se guardaron los resultados en un archivo de texto.")
