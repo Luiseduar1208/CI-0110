@@ -124,12 +124,15 @@ plt.suptitle("Ocurrencias de palabras por parrafo", fontdict = font1)
 plt.show()
 
 
+#Opcion de usuario si desea guardar o no la informacion 
 decision_usuario = input("Si desea descargar los resultados en un archivo de texto indique S o s: \n").lower()
 
 from statistics import mean, median, mode
 
 if decision_usuario == 's':
     with open(r"C:\Users\luied\Documents\Estadisticas.txt", "w") as resultados:
+  
+#Resultados implementados al archivo del usuario       
         resultados.write(f"""ESTADISTICAS DE PALABRAS
 Palabra 1: {palabra1}
 Total de ocurrencias: {totalp1}
