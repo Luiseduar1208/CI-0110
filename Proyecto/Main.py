@@ -74,6 +74,56 @@ menor_lista6 = min(lista6)
 totales.sort(reverse=True)
 mayor = totales[0]
 
+#Realizacion de gráficas
+#Importar numpy para los graficos
+import matplotlib.pyplot as plt
+import numpy as np
+ 
+#Font del titulo general 
+font1 = {'family': 'serif', 'color': 'gray', 'fontsize': 'x-large', 'fontweight': 'bold'}
+
+#Mostrar los graficos
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista1)
+ax1 = plt.subplot(2,3,1)
+plt.title(palabra1, color= 'b')
+plt.plot(x,y,'b')
+
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista2)
+plt.subplot(2,3,2, sharey= ax1)
+plt.title(palabra2, color= 'r')
+plt.plot(x,y,'r')
+
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista3)
+plt.subplot(2,3,3, sharey= ax1)
+plt.title(palabra3, color= 'y')
+plt.plot(x,y,'y')
+
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista4)
+plt.subplot(2,3,4, sharey= ax1)
+plt.title(palabra4, color= 'g')
+plt.plot(x,y,'g')
+
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista5)
+plt.subplot(2,3,5, sharey= ax1)
+plt.title(palabra5, color= 'c')
+plt.plot(x,y,'c')
+
+x = np.array(list(range(1,cant_parrafos+1)))
+y = np.array(lista6)
+plt.subplot(2,3,6, sharey= ax1)
+plt.title(palabra6, color= 'm')
+plt.plot(x,y,'m')
+
+# plt.tight_layout()
+plt.suptitle("Ocurrencias de palabras por parrafo", fontdict = font1)
+plt.show()
+
+
 decision_usuario = input("Si desea descargar los resultados en un archivo de texto indique S o s: \n").lower()
 
 from statistics import mean, median, mode
