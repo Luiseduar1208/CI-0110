@@ -18,7 +18,7 @@ palabra4 = input("Ingrese la cuarta palabra: ").strip().strip(string.punctuation
 palabra5 = input("Ingrese la quinta palabra: ").strip().strip(string.punctuation)
 palabra6 = input("Ingrese la sexta palabra: ").strip().strip(string.punctuation)
 
-with open(r"C:\Users\luied\Documents\TextoCompleto.txt") as archivo: #Apertura del archivo
+with open(r"C:\Users\luied\Documents\TextoCompleto.txt", encoding="utf-8") as archivo: #Apertura del archivo
 
     for linea in archivo: #Recorrido del archivo parrafo por parrafo
 
@@ -83,10 +83,10 @@ import numpy as np
 font1 = {'family': 'serif', 'color': 'gray', 'fontsize': 'x-large', 'fontweight': 'bold'}
 
 #Mostrar los graficos
-x = np.array(list(range(1,cant_parrafos+1)))
-y = np.array(lista1)
+x = np.array(list(range(1,cant_parrafos+1))) #Eje x
+y = np.array(lista1) #Eje y
 ax1 = plt.subplot(2,3,1)
-plt.title(palabra1, color= 'b')
+plt.title(palabra1, color= 'b') #Titulo y color del grafico
 plt.plot(x,y,'b')
 
 x = np.array(list(range(1,cant_parrafos+1)))
@@ -119,9 +119,8 @@ plt.subplot(2,3,6, sharey= ax1)
 plt.title(palabra6, color= 'm')
 plt.plot(x,y,'m')
 
-# plt.tight_layout()
 plt.suptitle("Ocurrencias de palabras por parrafo", fontdict = font1)
-plt.show()
+plt.show() #Mostrar graficos
 
 
 #Opcion de usuario si desea guardar o no la informacion 
