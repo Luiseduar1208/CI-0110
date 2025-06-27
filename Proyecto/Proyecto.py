@@ -18,7 +18,7 @@ palabra4 = input("Ingrese la cuarta palabra: ").strip().strip(string.punctuation
 palabra5 = input("Ingrese la quinta palabra: ").strip().strip(string.punctuation)
 palabra6 = input("Ingrese la sexta palabra: ").strip().strip(string.punctuation)
 
-with open(r"C:\Users\luied\Documents\TextoCompleto.txt", encoding="utf-8") as archivo: #Apertura del archivo
+with open(r"C:\Users\luied\Documents\TextoCompleto.txt", encoding ="utf-8") as archivo: #Apertura del archivo
 
     for linea in archivo: #Recorrido del archivo parrafo por parrafo
 
@@ -129,7 +129,7 @@ decision_usuario = input("Si desea descargar los resultados en un archivo de tex
 from statistics import mean, median, mode
 
 if decision_usuario == 's':
-    with open(r"C:\Users\luied\Documents\Estadisticas.txt", "w") as resultados:
+    with open(r"C:\Users\luied\Documents\Estadisticas.txt", "w", encoding ="utf-8") as resultados:
   
 #Resultados implementados al archivo del usuario       
         resultados.write(f"""ESTADISTICAS DE PALABRAS
@@ -181,6 +181,6 @@ Media de ocurrencias: {mean(lista6)}
 Mediana de ocurrencias: {median(lista6)}
 Modo de ocurrencias: {mode(lista6)}
 """)
-    print("Los resultados fueron guardados exitosamente en 'Estadisticas.txt'.")
+    print("Los resultados fueron almacenados exitosamente en 'Estadisticas.txt'.")
 else:
-    print("No se guardaron los resultados en un archivo de texto.")
+    print("No se almacenaron los resultados.")
